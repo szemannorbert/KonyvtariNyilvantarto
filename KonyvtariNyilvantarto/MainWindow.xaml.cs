@@ -45,7 +45,7 @@ namespace KonyvtariNyilvantarto
         public int TagID { get; set; }
         public string Név { get; set; }
         public string Szül_dátum { get; set; }
-        public int Irányítószám { get; set; }
+        public string Irányítószám { get; set; }
         public string Település { get; set; }
         public string Utca_Házszám { get; set; }
         public TagAdatok(string sor)
@@ -54,7 +54,7 @@ namespace KonyvtariNyilvantarto
             TagID = int.Parse(resz[0]);
             Név = resz[1];
             Szül_dátum = resz[2];
-            Irányítószám = int.Parse(resz[3]);
+            Irányítószám = resz[3];
             Település = resz[4];
             Utca_Házszám = resz[5];
         }
@@ -119,6 +119,44 @@ namespace KonyvtariNyilvantarto
             }
 
             kolcsonzesek.ItemsSource = kolcsonzesadatok;
+        }
+
+        private void konyvhozzaadas_Click(object sender, RoutedEventArgs e)
+        {
+            StreamWriter sw = new StreamWriter("konyvek.txt",true,Encoding.Default);
+            string konyvID = konyvIDText.Text;
+            string szerzo = szerzoText.Text;
+            string konyvCime = konyvCimeText.Text;
+            string kiadaseve = kiadaseveText.Text;
+            string kiado = kiadoText.Text;
+            sw.WriteLine($"{konyvID};{szerzo};{konyvCime};{kiadaseve};{kiado};true");
+            konyvIDText.Text = "";
+            szerzoText.Text = "";
+            konyvCimeText.Text = "";
+            kiadaseveText.Text = "";
+            kiadoText.Text = "";
+            sw.Close();
+            KonyvekBeolvasasa("konyvek.txt");
+        }
+
+        private void taghozzadas_Click(object sender, RoutedEventArgs e)
+        {
+            StreamWriter sw = new StreamWriter("tagok.txt", true, Encoding.Default);
+            string TagID = TagIDText.Text;
+            string nev = nevText.Text;
+            string szuldatum = szuldatumText.Text;
+            string irszam = irszamText.Text;
+            string telepules = telepulesText.Text;
+            string utca = utcaText.Text;
+            sw.WriteLine($"{TagID};{nev};{szuldatum};{irszam};{telepules};{utca}");
+            TagIDText.Text = "";
+            nevText.Text = "";
+            szuldatumText.Text = "";
+            irszamText.Text = "";
+            telepulesText.Text = "";
+            utcaText.Text = "";
+            sw.Close();
+            TagokBeolvasasa("tagok.txt");
         }
     }
 }
