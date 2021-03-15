@@ -5,21 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KonyvtariNyilvantarto"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1000" ResizeMode="CanMinimize">
     <Grid>
         <TabControl>
             <TabItem Header="Könyvek">
-                <DataGrid x:Name="konyvek" IsReadOnly="true">
-                    
-                </DataGrid>
+                <Canvas>
+                    <DataGrid x:Name="konyvek" IsReadOnly="true" HorizontalAlignment="Left" Width="600" ColumnWidth="100">
+
+                    </DataGrid>
+                    <Button Content="Könyv törlése" Canvas.Right="100" Canvas.Top="375" Height="40" Width="150" FontSize="16"/>
+                    <Button Content="Könyv hozzáadása" Height="40" Width="150" Canvas.Right="100" Canvas.Top="325" FontSize="16"/>
+                    <Label Content="Kiadó" Height="30" Canvas.Left="639" Canvas.Top="250" Width="100" FontSize="16"/>
+                    <Label Content="Kiadás éve" Height="30" Canvas.Left="639" Canvas.Top="200" Width="100" FontSize="16"/>
+                    <Label Content="Könyv címe" Height="30" Canvas.Left="639" Canvas.Top="150" Width="100" FontSize="16"/>
+                    <Label Content="Szerző" Height="30" Canvas.Left="639" Canvas.Top="100" Width="100" FontSize="16"/>
+                    <Label Content="KönyvID" Height="30" Canvas.Left="639" Canvas.Top="50" Width="100" FontSize="16"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="50" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="100" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="150" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="200" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="250" Width="150" BorderThickness="2"/>
+                </Canvas>
             </TabItem>
             <TabItem Header="Tagok">
-                <DataGrid x:Name="tagok" IsReadOnly="true">
+                <Canvas>
+                    <DataGrid x:Name="tagok" IsReadOnly="true" HorizontalAlignment="Left" Width="600" ColumnWidth="100">
+
+                    </DataGrid>
+                    <Button Content="Tag törlése" Canvas.Right="100" Canvas.Top="380" Height="40" Width="150" FontSize="16"/>
+                    <Button Content="Tag hozzáadása" Height="40" Width="150" Canvas.Right="100" Canvas.Top="330" FontSize="16"/>
+                    <Label Content="Utca, házszám" Height="30" Canvas.Left="639" Canvas.Top="280" Width="100" FontSize="14"/>
+                    <Label Content="Település" Height="30" Canvas.Left="639" Canvas.Top="230" Width="100" FontSize="15"/>
+                    <Label Content="Irányítószám" Height="30" Canvas.Left="639" Canvas.Top="180" Width="100" FontSize="15"/>
+                    <Label Content="Szül. dátum" Height="30" Canvas.Left="639" Canvas.Top="130" Width="100" FontSize="15"/>
+                    <Label Content="Név" Height="30" Canvas.Left="639" Canvas.Top="80" Width="100" FontSize="15"/>
+                    <Label Content="TagID" Height="30" Canvas.Left="639" Canvas.Top="30" Width="100" FontSize="15"/>
                     
-                </DataGrid>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="30" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="80" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="130" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="180" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="230" Width="150" BorderThickness="2"/>
+                    <TextBox Height="30" Canvas.Left="738" TextWrapping="Wrap" Text="" Canvas.Top="280" Width="150" BorderThickness="2"/>
+                </Canvas>
             </TabItem>
             <TabItem Header="Kölcsönzések">
-                <DataGrid x:Name="kolcsonzesek" IsReadOnly="true">
+                <DataGrid x:Name="kolcsonzesek" IsReadOnly="true" HorizontalAlignment="Left" Width="600" ColumnWidth="100">
 
                 </DataGrid>
             </TabItem>
